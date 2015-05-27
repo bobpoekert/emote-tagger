@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>emotes</title>
+        <style>
+            td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="container">
+        </table>
+        <script src="emote_counts.json"></script>
+        <script>
+            window.onload = function() {
+                var container = document.getElementById('container');        
+                for (var i=0; i < emote_counts.length; i++) {
+                    var row = document.createElement('tr');
+                    var tag = document.createElement('td');
+                    tag.appendChild(document.createTextNode(emote_counts[i][0]));
+                    row.appendChild(tag);
+                    var count = document.createElement('td');
+                    count.appendChild(document.createTextNode(emote_counts[i][1]));
+                    row.appendChild(count);
+                    container.appendChild(row);
+                }
+            };
+        </script>
+    </body>
+</html>
